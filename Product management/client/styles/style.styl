@@ -1,0 +1,217 @@
+@import '_normalize.styl'
+@import '_typography.styl'
+@import '_animations.styl'
+
+body
+  background offwhite
+
+.photo-grid
+  display flex
+  flex-wrap wrap
+  max-width 1200px
+  margin 0 auto
+
+.grid-figure
+  width: 30%;
+  margin 0 2rem 2rem 2rem
+  padding 2rem
+  border 1px solid lightgray
+  background white
+  box-shadow 0 0 0 5px rgba(0,0,0,0.03);
+  position relative
+
+.single-photo
+  @extend .grid-figure
+  max-width 900px
+  margin 0 auto
+  display flex
+  background white
+  .grid-figure
+    box-shadow none
+    margin 0 2rem 0 0
+    border 0
+    padding 0
+    flex 1 0 60%
+    max-width 60%
+  .comments
+    margin-top: 14px;
+
+.grid-photo
+  width calc(100% + 4rem)
+  margin-left -2rem
+  margin-top -2rem
+  max-width none
+
+// Comments
+.remove-comment
+  background none
+  border 0
+  line-height 1
+  opacity 0
+  &:hover
+    color red
+
+.comment
+  border-bottom 1px solid lightgrey
+  padding 0.5rem 0
+  p
+    font-size 1.2rem
+    margin 0
+  strong
+    color blue
+    margin-right 5px
+  &:hover
+    .remove-comment
+      opacity 1
+ 
+.comment-form 
+  input, textarea
+    width 100%
+    border 0
+    font-size 1.3rem
+    padding 1rem 0
+    border-bottom 1px solid lightgrey
+    outline none
+    resize vertical
+
+
+.grid-photo-wrap
+  position relative
+  min-height: 341px;
+  max-height: 360px;
+  
+.likes-heart
+  background url(http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png) center no-repeat
+  background-size contain
+  font-size 2rem
+  padding 1rem
+  position absolute
+  color blue
+  left 50%
+  top 50%
+  pointer-events none
+  
+
+/*  
+  Buttons  
+*/
+
+.control-buttons
+  display flex
+  justify-content space-between
+    
+button, .button
+  border 2px solid lighten(grey, 90%)
+  background none
+  flex-basis 48%
+  display inline-block
+  line-height 2
+  text-decoration none
+  padding 5px
+  text-align center
+  font-size 15px
+  color blue
+  transition all 0.2s
+  box-sizing padding-box
+  &:hover, &:focus
+    border-color blue
+    outline 0
+
+/*
+  Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons.
+*/
+.speech-bubble
+  size = 1.25rem
+  width size * 1.2
+  height size 
+  background blue
+  display inline-block
+  border-radius 50%
+  position relative
+  &:after
+    display inline-block
+    position absolute
+    content ''
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 size size 0
+    border-color: transparent blue transparent transparent
+    top 30%
+    left 0
+
+.form-control
+  width 48%;
+  height 50px
+  padding-left 11px
+  display block
+  font-size 3rem
+  line-height 1.5
+  color: #495057
+  background-color: #fff
+  background-clip: padding-box
+  border: 1px solid #ced4da
+  border-radius: 0.25rem
+  transition border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+
+.label
+  display inline-block
+  max-width 100%
+  margin-bottom 4px
+  font-weight 600
+  font-family unset
+  font-size 17px
+  line-height 2.5
+
+.pform
+  width 84%
+  margin-left 391px
+
+.addPrButton
+    border: 2px solid #f2f2f2
+    width: 100%
+    background: none
+    display inline-block
+    line-height 2
+    text-decoration none
+    padding 5px
+    text-align: center
+    font-size 15px
+    color #fafafa
+    transition all 0.2s
+    background-color: #125688
+    margin-bottom: 14px;
+
+.savePrButton
+    border: 4px solid #f3f2f2;
+    background: none;
+    width: 18%;
+    margin-top: 13px;
+    margin-bottom: 21px;
+    display: inline-block;
+    line-height: 2;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    color: #125688;
+    transition: all 0.2s;
+
+.headerline
+    font-family: serif;
+    text-align: center;
+    font-weight: 100;
+    font-size: 5rem;
+    margin: 2rem 0;
+    letter-spacing: -1px;
+    text-shadow: 0px 4px 0 rgba(18,86,136,0.11);
+.labelgrid
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: -20px;
+    font-weight: 600;
+    font-family: unset;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #5e5eb9;
+
